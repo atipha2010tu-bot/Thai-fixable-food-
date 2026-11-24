@@ -1,4 +1,4 @@
-const CACHE = 'thaiflex-v6';
+const CACHE = 'thaiflex-v9';
 const ASSETS = ['./', 'index.html', 'style.css', 'data.js', 'core.js', 'art.js', 'avatar.js', 'app.js', 'manifest.webmanifest', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));

@@ -43,3 +43,11 @@ $('wi').onclick=()=>sm('in');$('wc').onclick=()=>sm('up');$('ab').onclick=()=>{$
 $('tp0').style.display='none';document.querySelector('.sub').style.display='none';homeS();
 setItems(P[0][1]);$('mn').value=P[0][0];render();
 document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{const w=document.querySelector('.w');if(w)w.scrollTop=0}));
+
+/* เสถียรภาพ: ซ่อนแถบเมนูตอนพิมพ์ + กันทั้งหน้าถูกดันเลื่อนบน iOS */
+(function(){const b=document.body,F=e=>e&&/^(INPUT|SELECT|TEXTAREA)$/.test(e.tagName);
+addEventListener('focusin',e=>{if(F(e.target))b.classList.add('kb')});
+addEventListener('focusout',()=>setTimeout(()=>{if(!F(document.activeElement)){b.classList.remove('kb');scrollTo(0,0)}},60));
+if(window.visualViewport)visualViewport.addEventListener('scroll',()=>scrollTo(0,0));
+document.addEventListener('touchmove',e=>{if(!e.target.closest('.w,#af,.mb,.ast,.chips,#au input'))e.preventDefault()},{passive:false});
+})();

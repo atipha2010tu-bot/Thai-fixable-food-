@@ -185,11 +185,44 @@ input,select,textarea{font-size:16px}
 #au:not(.hid){animation:fin .45s ease}
 #p0,#p1,#p2,#p3,#p4{animation:pin .3s ease}
 @keyframes fin{from{opacity:0}}
-@keyframes pin{from{opacity:0;transform:translateY(8px)}}
+@keyframes pin{from{opacity:0}}
 @media (prefers-reduced-motion:reduce){#sp,#sp *,#au,#p0,#p1,#p2,#p3,#p4{animation-duration:.01s!important;animation-delay:0s!important}}
 
-/* ===== v5: โครงแอปเต็มจอ — เนื้อหาเลื่อนในกรอบ แถบเมนูอยู่นอกกรอบ ไม่ขยับ ===== */
-html,body{height:100%;overflow:hidden;overscroll-behavior:none}
-body{position:fixed;inset:0;width:100%}
-:root{padding:0}
-.w{position:fixed;top:0;bottom:0;left:0;right:0;max-width:640px;margin:0 auto;overflow-y:auto;overflow-x:clip;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain;padding:calc(12px + env(safe-area-inset-top,0px)) 12px calc(130px + env(safe-area-inset-bottom,0px))}
+/* ===== v7: โครงแอป (App Shell) — เสถียร ไม่ขยับ =====
+   หลักการ: หน้าจอไม่เลื่อน (body ล็อก) / มีกรอบเลื่อนอันเดียวคือ .w
+   .w เริ่มใต้แถบสถานะพอดี (ไม่ใช้ padding บนที่ทำให้ sticky เพี้ยน)
+   แถบเมนูล่างตรึงกับจอ ไม่ใช้ transform และซ่อนตอนคีย์บอร์ดขึ้น */
+:root{--sat:env(safe-area-inset-top,0px);--sab:env(safe-area-inset-bottom,0px);--tabh:64px;padding:0}
+html{height:100%;background:var(--bg);overscroll-behavior:none;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html,body{overflow:hidden}
+body{position:fixed;inset:0;width:100%;margin:0;overscroll-behavior:none;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+input,select,textarea{-webkit-user-select:text;user-select:text;font-size:16px!important}
+svg{display:block}
+
+/* แถบสถานะ (ช่องเหนือเนื้อหา) — ทึบ ไม่ให้เนื้อหาโผล่ทะลุ */
+#sb{position:fixed;top:0;left:0;right:0;height:calc(var(--sat) + 1px);z-index:70;background:var(--bg);pointer-events:none}
+body:has(#p4:not(.hid)) #sb{background:#4fb8ea}
+body:has(#p3:not(.hid)) #sb{background:var(--card)}
+
+/* กรอบเลื่อนอันเดียว */
+.w{position:fixed;top:var(--sat);bottom:0;left:0;right:0;max-width:640px;margin:0 auto;padding:0 12px calc(var(--tabh) + var(--sab) + 28px);overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+
+.w::before{content:"";display:block;height:12px}
+
+/* แถบเมนูล่าง: ตรึงกับจอ */
+.tabs{position:fixed;left:0;right:0;bottom:0;margin:0 auto;transform:none;width:100%;max-width:640px;z-index:60;touch-action:manipulation;-webkit-user-select:none;user-select:none;padding:8px 8px calc(8px + var(--sab))}
+body.kb .tabs{display:none}
+body.kb .w{padding-bottom:24px}
+
+/* การ์ดตัวละคร: ล็อกติดใต้แถบสถานะ */
+.apv{position:sticky;top:0;z-index:20;margin:0 -12px 8px;padding:10px 12px 10px;background:var(--card);border-bottom:1px solid var(--ln);box-shadow:0 8px 14px -10px rgba(20,40,20,.3)}
+
+/* หน้าเปิดแอป / ล็อกอิน: เต็มจอจริง */
+#sp,#au{position:fixed;inset:0;width:100%;height:100%;min-height:100%}
+#au{overflow:hidden;overscroll-behavior:none}
+#aw{position:absolute;inset:0;height:auto;min-height:0}
+#aw .wh{flex:1 1 auto;min-height:0}
+.wh svg,.fh svg,.hh svg{width:100%;height:100%}
+#af{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+#md{position:fixed;inset:0;overscroll-behavior:none}
+.mb{max-height:85%;overscroll-behavior:contain;padding-bottom:calc(14px + var(--sab))}
