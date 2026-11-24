@@ -3,76 +3,45 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#2f6b2f">
-<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f4f6e4">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Flexible Diet">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="icon-192.png">
-<title>Flexible Diet อาหารไทย</title>
-<style>
-:root{--bg:#f6f4ec;--card:#fff;--tx:#1f2a1c;--mut:#6b7566;--pri:#2f6b2f;--acc:#d9731a;--ln:#e2dfd2;--bad:#b3261e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a12;--card:#1e271b;--tx:#eef3ea;--mut:#9fab99;--pri:#6fbf6f;--acc:#f0933f;--ln:#34402f;--bad:#ff8a80}}
-:root[data-theme="dark"]{--bg:#141a12;--card:#1e271b;--tx:#eef3ea;--mut:#9fab99;--pri:#6fbf6f;--acc:#f0933f;--ln:#34402f;--bad:#ff8a80}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font-family:"Sarabun","Noto Sans Thai",system-ui,sans-serif;font-size:15px;line-height:1.45}
-.w{max-width:640px;margin:0 auto;padding:12px}
-h1{font-size:20px;margin:4px 0 2px;color:var(--pri)}
-.sub{color:var(--mut);font-size:13px;margin-bottom:10px}
-.tabs{display:flex;gap:6px;margin-bottom:10px}
-.tabs button{flex:1;padding:9px;border:1px solid var(--ln);background:var(--card);color:var(--tx);border-radius:10px;font:inherit;cursor:pointer}
-.tabs button.on{background:var(--pri);color:#fff;border-color:var(--pri)}
-.c{background:var(--card);border:1px solid var(--ln);border-radius:14px;padding:12px;margin-bottom:10px}
-.c h2{font-size:15px;margin:0 0 8px}
-input,select{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--ln);border-radius:8px;padding:8px;width:100%}
-.r{display:flex;gap:8px;align-items:center}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.chip{padding:6px 10px;border-radius:99px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font:inherit;font-size:13px;cursor:pointer}
-.chip.a{background:var(--acc);color:#fff;border-color:var(--acc)}
-.ing{display:grid;grid-template-columns:1fr auto;gap:4px 8px;padding:8px 0;border-top:1px solid var(--ln)}
-.ing:first-of-type{border-top:0}
-.nm{font-weight:600}.sm{font-size:12px;color:var(--mut)}
-.g{display:flex;align-items:center;gap:4px}
-.g input{width:68px;text-align:center}
-.g button{width:34px;height:34px;border-radius:8px;border:1px solid var(--ln);background:var(--bg);color:var(--tx);font-size:18px;cursor:pointer}
-.x{color:var(--bad)!important}
-.res{display:none;max-height:210px;overflow:auto;border:1px solid var(--ln);border-radius:8px;margin-top:4px}
-.res div{padding:8px;border-bottom:1px solid var(--ln);cursor:pointer}
-.big{font-size:34px;font-weight:700;color:var(--acc);line-height:1}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px;text-align:center}
-.grid div{background:var(--bg);border-radius:10px;padding:8px 2px}
-.grid b{display:block;font-size:16px}
-.bar{display:flex;height:10px;border-radius:6px;overflow:hidden;margin-top:10px;background:var(--ln)}
-.dl{font-size:12px;margin-left:4px}.up{color:var(--bad)}.dn{color:var(--pri)}
-.btn{padding:10px 14px;border:0;border-radius:10px;background:var(--pri);color:#fff;font:inherit;font-weight:600;cursor:pointer;width:100%}
-.btn.o{background:var(--bg);color:var(--tx);border:1px solid var(--ln)}
-.warn{font-size:12px;color:var(--mut);border-left:3px solid var(--acc);padding-left:8px;margin:8px 0}
-.est{color:var(--acc);font-size:11px}
-.l{display:grid;grid-template-columns:1fr auto;gap:2px 8px;padding:8px 0;border-top:1px solid var(--ln)}
-a{color:var(--pri)}
-.hid{display:none}
-.f2{display:grid;grid-template-columns:1fr 1fr;gap:6px}
-</style>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ThaiFlex">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="manifest" href="manifest.webmanifest">
+<title>ThaiFlex</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Noto+Sans+Thai:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="sp"><div class="ar"><svg id="spS" viewBox="0 0 200 170"></svg></div><span class="lgw"></span><small>คำนวณอาหารไทย</small></div>
+<div id="au" class="hid"><div id="aw"><div class="wh"><svg id="auS" viewBox="0 0 200 170" preserveAspectRatio="xMidYMax slice"></svg><div class="wl"><span class="lgw"></span></div></div>
+<div class="wt"><h1>กินให้ฉลาด<br>สบายใจกว่าเดิม</h1><p>คำนวณแคลอรี่เมนูไทย ติดตามสารอาหาร และเก็บบันทึกทุกมื้อไว้ในที่เดียว</p></div>
+<div class="wb"><button class="b2" id="wi">เข้าสู่ระบบ</button><button class="b3" id="wc">สร้างบัญชี</button></div></div>
+<div id="af" class="hid"><div class="fh"><svg id="afS" viewBox="0 0 200 170" preserveAspectRatio="xMidYMax slice"></svg><span class="lgw"></span></div><div class="sheet"><div class="sm" id="ab" style="cursor:pointer;margin-bottom:8px">‹ กลับ</div><div style="text-align:center"><h2 style="margin:8px 0 2px;font-size:20px">ยินดีต้อนรับ</h2></div>
+<button class="so" disabled><b style="color:#ea4335">G</b> ดำเนินการต่อด้วย Google <i>เร็วๆ นี้</i></button><button class="so" disabled><b style="color:#1877f2">f</b> ดำเนินการต่อด้วย Facebook <i>เร็วๆ นี้</i></button>
+<div class="sm" style="text-align:center;margin:12px 0 8px">หรือใช้ชื่อผู้ใช้</div><input id="aN" class="hid" placeholder="ชื่อที่ให้เรียก"><input id="aU" placeholder="ชื่อผู้ใช้ (อังกฤษ/ตัวเลข)" autocapitalize="none" style="margin-bottom:8px"><input id="aP" type="password" placeholder="รหัสผ่าน" style="margin-bottom:8px"><div class="sm up" id="aE"></div><button class="btn" id="aG">เข้าสู่ระบบ</button><div class="sm" id="aS" style="text-align:center;margin-top:12px;cursor:pointer;text-decoration:underline">ยังไม่มีบัญชี? สมัครเลย</div></div></div></div>
+<div id="md" class="hid"><div class="mb"><button class="chip" id="mx">✕ ปิด</button><div id="mc" style="margin-top:8px"></div></div></div>
 <div class="w">
-<h1>🥗 Flexible Diet อาหารไทย</h1>
+<div class="top" id="tp0"><span class="lgw"></span><div><small>สวัสดี</small><b id="hn"></b></div><span class="av" id="av"></span></div>
 <div class="sub">คำนวณพลังงานและสารอาหารรายเมนู ปรับปริมาณแล้วเห็นผลทันที</div>
-<div class="tabs"><button id="t0" class="on">คำนวณ</button><button id="t1">บันทึก</button><button id="t2">อ้างอิง</button></div>
 
-<div id="p0">
+<div id="p4"><div class="hh"><svg id="hhS" viewBox="0 -45 200 215" preserveAspectRatio="xMidYMax slice"></svg><button class="pl" id="hpl"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span id="hpn"></span> ▾</button><button class="hav" id="hav" aria-label="โปรไฟล์ของฉัน"></button><div class="gr" id="hg"></div></div>
+<div class="shH"><div class="c"><div class="st3" id="hs3"></div><div class="mp" id="hmp"></div></div>
+<div class="c"><h2>รายการวันนี้</h2><div id="hr"></div></div><h2 style="margin:16px 0 0;font-size:18px;font-weight:800">เลือกธีมสถานที่</h2></div><div class="r" style="margin:10px 0"><input id="hq" placeholder="ค้นหาสถานที่ เช่น ภูเก็ต เชียงใหม่"></div><div class="chips" id="hc" style="overflow-x:auto;flex-wrap:nowrap"></div><div id="hl"></div></div>
+<div id="p0" class="hid">
 <div class="c">
 <h2>เมนู</h2>
 <div class="r"><input id="mn" placeholder="ชื่อเมนู เช่น กะเพราไก่ไข่ดาว" value="เมนูของฉัน"><input id="sv" type="number" min="0.1" step="any" value="1" style="width:80px" aria-label="จำนวนเสิร์ฟ"><span class="sm">จาน</span></div>
-<button class="btn" id="ai" style="margin-top:8px">✨ พิมพ์ชื่อเมนูอะไรก็ได้ แล้วสร้างวัตถุดิบอัตโนมัติ</button><div id="kb" class="hid" style="margin-top:6px"><input id="ky" type="password" placeholder="Anthropic API key (sk-ant-...)" autocomplete="off"><button class="btn o" id="kbtn" style="margin-top:6px">บันทึก key</button><div class="warn">โหมด AI บนเว็บนี้ต้องใช้ API key ของคุณเอง (สร้างที่ console.anthropic.com) key เก็บในเบราว์เซอร์เครื่องนี้เท่านั้น ไม่ส่งไปที่อื่นนอกจาก Anthropic ไม่ควรใส่บนเครื่องสาธารณะ</div></div><div class="sm" id="as" style="margin-top:6px">เช่น ผัดกะเพราปลาหมึกไข่เค็ม, ข้าวคลุกกะปิ, ขนมครกใบเตย แล้วปรับกรัมได้เอง</div><div class="sm" style="margin-top:8px">หรือเลือกเมนูตัวอย่าง:</div>
+<button class="btn" id="ai" style="margin-top:8px">พิมพ์ชื่อเมนูอะไรก็ได้ แล้วสร้างวัตถุดิบอัตโนมัติ</button><div class="sm" id="as" style="margin-top:6px">เช่น ผัดกะเพราปลาหมึกไข่เค็ม, ข้าวคลุกกะปิ, ขนมครกใบเตย แล้วปรับกรัมได้เอง</div><div class="sm" style="margin-top:8px">หรือเลือกเมนูตัวอย่าง:</div>
 <div class="chips" id="pre"></div>
 </div>
 
 <div class="c">
 <h2>วัตถุดิบและเครื่องปรุง</h2>
 <div id="list"><div class="sm">ยังไม่มีรายการ ค้นหาด้านล่างเพื่อเพิ่ม</div></div>
-<div style="margin-top:10px"><input id="q" placeholder="🔍 ค้นหา เช่น น้ำปลา กะทิ พริกแกง" autocomplete="off"><div class="res" id="res"></div></div>
+<div style="margin-top:10px"><input id="q" placeholder="ค้นหา เช่น น้ำปลา กะทิ พริกแกง" autocomplete="off"><div class="res" id="res"></div></div>
 <div class="chips"><button class="chip" id="cust">+ เพิ่มวัตถุดิบเอง</button></div>
 <div id="cf" class="hid" style="margin-top:8px">
 <div class="warn">กรอกค่าต่อ 100 กรัม/มล. จากฉลากโภชนาการหรือฐานข้อมูลที่ท่านเชื่อถือ</div>
@@ -83,7 +52,7 @@ a{color:var(--pri)}
 </div>
 
 <div class="c">
-<h2>⚖️ ปรับสัดส่วนแบบ Flexible</h2>
+<h2>ปรับสัดส่วนแบบ Flexible</h2>
 <div class="sm">ลดทีเดียวทั้งหมวด (ไม่กระทบวัตถุดิบหลัก)</div>
 <div class="chips">
 <button class="chip" data-k="fat" data-f="0.75">น้ำมัน −25%</button>
@@ -119,6 +88,17 @@ a{color:var(--pri)}
 <div class="c"><h2>ย้อนหลัง</h2><div id="hs"></div></div>
 </div>
 
+<div id="p3" class="hid">
+<div class="c"><h2>ข้อมูลส่วนตัว</h2><div class="sm" id="pn"></div>
+<div id="avc"><div class="apv"><div class="apb" id="avp"></div><div class="aa"><b>ตัวละครของฉัน</b><div class="sm" id="avn"></div><div class="r" style="gap:6px"><button class="chip" id="avr">🎲 สุ่ม</button><button class="chip" id="avz">↺ ล้างค่า</button></div></div></div><div class="sm">เริ่มจากแบบสำเร็จรูป</div><div class="ast" id="avpr"></div><div class="ast" id="ast"></div><div id="ag"></div></div>
+<div class="sm" style="margin-top:8px">ชื่อที่ให้เรียก</div><input id="pfn">
+<div class="f2" style="margin-top:8px"><div><div class="sm">อายุ (ปี)</div><input id="pfa" type="number"></div><div><div class="sm">ส่วนสูง (cm)</div><input id="pfh" type="number"></div><div><div class="sm">น้ำหนัก (kg)</div><input id="pfw" type="number" step="any"></div><div><div class="sm">เป้าหมาย</div><select id="pfg"><option value="">ไม่ระบุ</option><option>ลดน้ำหนัก</option><option>คงน้ำหนัก</option><option>เพิ่มกล้ามเนื้อ</option></select></div></div>
+<div class="sm" id="pfb" style="margin-top:6px"></div><button class="btn" id="pfs" style="margin-top:8px">บันทึกข้อมูล</button><div class="sm" id="pfm"></div></div>
+<div class="c"><h2>เปลี่ยนรหัสผ่าน</h2><input id="cp0" type="password" placeholder="รหัสผ่านเดิม" style="margin-bottom:8px"><input id="cp1" type="password" placeholder="รหัสผ่านใหม่"><button class="btn o" id="cps" style="margin-top:8px">เปลี่ยนรหัสผ่าน</button><div class="sm" id="cpm"></div></div>
+<div class="c"><button class="btn o" id="lo">ออกจากระบบ</button></div>
+<div class="c"><h2>ธีมสถานที่</h2><div class="sm" id="thn"></div><button class="btn" id="thg" style="margin-top:8px">เลือกธีมใหม่</button></div>
+<div class="c"><h2>สำรองข้อมูล</h2><div class="sm">ข้อมูลของบัญชีนี้เก็บในเครื่องนี้ ถ้าลบแอพหรือล้างเบราว์เซอร์ข้อมูลจะหาย ควรกดสำรองไว้เป็นระยะ</div><div class="r" style="margin-top:8px"><button class="btn" id="ex">สำรอง</button><button class="btn o" id="im">นำเข้า</button></div><input type="file" id="imf" accept=".json" class="hid"></div>
+</div>
 <div id="p2" class="hid">
 <div class="c"><h2>แหล่งอ้างอิงข้อมูลโภชนาการ</h2>
 <p class="sm">ค่าทั้งหมดเป็น <b>ต่อ 100 กรัม (หรือ มล.) ส่วนที่กินได้</b></p>
@@ -154,127 +134,14 @@ a{color:var(--pri)}
 </div>
 </div>
 
+<div class="tabs"><button id="t4" class="on" data-ic="home" data-l="หน้าแรก"></button><button id="t0" data-ic="calc" data-l="คำนวณ"></button><button id="t1" data-ic="log" data-l="บันทึก"></button><button id="t2" data-ic="ref" data-l="อ้างอิง"></button><button id="t3" data-ic="user" data-l="โปรไฟล์"></button></div>
 <script>
-// [ชื่อ, หมวด, kcal, P, F, C, Na mg, ประมาณ(1)]  หมวด: carb pro veg fat sugar sauce coco other
-const D=[
-["ข้าวสวย (หอมมะลิ)","carb",130,2.7,0.3,28,1],["ข้าวกล้องสุก","carb",123,2.7,1,25.6,4],["ข้าวเหนียวนึ่ง","carb",169,3.5,0.3,37,3,1],["เส้นเล็ก/เส้นจันท์ลวก","carb",109,1.8,0.2,25,5,1],["บะหมี่ไข่ลวก","carb",138,4.5,2.1,25,5,1],["วุ้นเส้นลวก","carb",84,0,0,21,3,1],
-["อกไก่สุก (ไม่หนัง)","pro",165,31,3.6,0,74],["สะโพกไก่ไม่หนัง สุก","pro",179,24.8,8.1,0,95],["หมูสันนอกสด","pro",143,22,5.5,0,55,1],["หมูสามชั้นสด","pro",518,9.3,53,0,32],["หมูบดสด","pro",263,16.9,21.2,0,56],["เนื้อวัวสันในสด","pro",158,22,7,0,55,1],["ไข่ไก่ (ทั้งฟอง ไม่รวมน้ำมัน)","pro",143,12.6,9.5,0.7,142],["กุ้งสุก","pro",99,24,0.3,0.2,111],["ปลานิลสุก","pro",128,26,2.7,0,56],["ปลาทูสด","pro",205,19,14,0,70,1],["ปลาหมึกสด","pro",92,15.6,1.4,3.1,44],["เต้าหู้ขาวอ่อน","pro",76,8,4.8,1.9,7],["ถั่วลิสงคั่ว","pro",585,23.7,49.7,21.5,6],
-["ผักบุ้ง","veg",19,2.6,0.2,3.1,113],["กะหล่ำปลี","veg",25,1.3,0.1,5.8,18],["ผักกาดขาว","veg",16,1.2,0.2,3.2,9,1],["มะเขือเปราะ","veg",25,1,0.2,6,2,1],["ถั่วฝักยาว","veg",47,2.8,0.4,8.4,4],["มะละกอดิบ","veg",27,0.9,0.1,6.6,5,1],["มะเขือเทศ","veg",18,0.9,0.2,3.9,5],["ถั่วงอก","veg",30,3,0.2,6,6],["เห็ดฟาง","veg",32,3.7,0.4,5.3,4,1],["ฟักทอง","veg",26,1,0.1,6.5,1],["แครอท","veg",41,0.9,0.2,9.6,69],["แตงกวา","veg",15,0.7,0.1,3.6,2],["ต้นหอม","veg",32,1.8,0.2,7.3,16],["ใบกะเพรา/โหระพา","veg",23,3.2,0.6,2.7,4],["ตะไคร้","veg",99,1.8,0.5,25.3,6],["กระเทียม","veg",149,6.4,0.5,33.1,17],["หอมแดง/หอมหัวใหญ่","veg",72,2.5,0.1,16.8,4,1],["พริกขี้หนู/พริกสด","veg",40,1.9,0.4,8.8,9],["พริกป่น","veg",318,12,17.3,56.6,30],
-["น้ำมันพืช","fat",884,0,100,0,0],["น้ำมันปาล์ม","fat",884,0,100,0,0],["น้ำมันมะพร้าว","fat",862,0,100,0,0],["เนยจืด","fat",717,0.9,81,0.1,11],
-["น้ำตาลทราย","sugar",387,0,0,100,1],["น้ำตาลปี๊บ/น้ำตาลมะพร้าว","sugar",375,1,0,93,30,1],["น้ำผึ้ง","sugar",304,0.3,0,82.4,4],["นมข้นหวาน","sugar",321,7.9,8.7,54.4,127],["น้ำมะขามเปียก","sugar",239,2.8,0.6,62.5,28],
-["น้ำปลา","sauce",35,5.1,0,3.6,7851],["ซีอิ๊วขาว","sauce",53,8.1,0.6,4.9,5493],["ซีอิ๊วดำหวาน","sauce",170,2,0,40,3500,1],["ซอสหอยนางรม","sauce",51,1.4,0.3,10.9,2733],["ซอสปรุงรส","sauce",50,7,0,5,6000,1],["ซอสพริก (ศรีราชา)","sauce",93,1.9,1,19,2124],["ซอสมะเขือเทศ","sauce",101,1,0.1,27,907],["เกลือ","sauce",0,0,0,0,38758],["น้ำปลาร้า","sauce",40,6,0.5,3,6000,1],["กะปิ","sauce",130,17,2,10,9000,1],["น้ำพริกเผา","sauce",300,3,22,24,1500,1],["น้ำจิ้มไก่ (หวาน)","sauce",230,0.5,0.2,56,1500,1],["น้ำจิ้มสุกี้","sauce",120,2,1,26,2000,1],["น้ำจิ้มซีฟู้ด","sauce",100,0.5,0,24,1500,1],["พริกแกงเขียวหวาน","sauce",70,2,3,10,2500,1],["พริกแกงแดง","sauce",70,2,3,10,2500,1],["พริกแกงส้ม/ต้มยำ","sauce",60,2,2,10,2500,1],["น้ำส้มสายชู","sauce",18,0,0,0,2],["น้ำมะนาว","sauce",25,0.4,0.1,8.4,2],
-["กะทิ","coco",197,2,21.3,2.8,13],["นมสด","other",61,3.2,3.3,4.8,43]
-];
-const P=[
-["กะเพราไก่ไข่ดาว",[["ข้าวสวย (หอมมะลิ)",200],["อกไก่สุก (ไม่หนัง)",80],["ไข่ไก่ (ทั้งฟอง ไม่รวมน้ำมัน)",50],["น้ำมันพืช",20],["กระเทียม",8],["พริกขี้หนู/พริกสด",5],["ใบกะเพรา/โหระพา",20],["น้ำปลา",5],["ซอสหอยนางรม",10],["ซีอิ๊วขาว",5],["น้ำตาลทราย",3]]],
-["ส้มตำไทย",[["มะละกอดิบ",150],["มะเขือเทศ",30],["ถั่วฝักยาว",20],["กระเทียม",5],["พริกขี้หนู/พริกสด",3],["น้ำมะนาว",20],["น้ำปลา",10],["น้ำตาลปี๊บ/น้ำตาลมะพร้าว",12],["ถั่วลิสงคั่ว",10]]],
-["แกงเขียวหวานไก่",[["ข้าวสวย (หอมมะลิ)",200],["อกไก่สุก (ไม่หนัง)",100],["กะทิ",150],["พริกแกงเขียวหวาน",30],["มะเขือเปราะ",60],["ใบกะเพรา/โหระพา",5],["น้ำปลา",10],["น้ำตาลปี๊บ/น้ำตาลมะพร้าว",8]]],
-["ผัดไทยกุ้ง",[["เส้นเล็ก/เส้นจันท์ลวก",150],["กุ้งสุก",60],["ไข่ไก่ (ทั้งฟอง ไม่รวมน้ำมัน)",50],["เต้าหู้ขาวอ่อน",30],["ถั่วงอก",40],["น้ำมันพืช",15],["น้ำตาลทราย",15],["น้ำปลา",10],["น้ำมะขามเปียก",15],["ถั่วลิสงคั่ว",10]]]
-];
-const $=id=>document.getElementById(id);
-const st=(k,v)=>{try{if(v===undefined){return JSON.parse(localStorage.getItem(k))}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}};
-let cust=st('fd_cust')||[];
-let all=()=>D.concat(cust);
-let items=[],base=null;
-const find=n=>all().find(x=>x[0]===n);
-const f1=v=>(Math.round(v*10)/10).toLocaleString('th-TH');
-const f0=v=>Math.round(v).toLocaleString('th-TH');
-
-function sum(arr){const t=[0,0,0,0,0];arr.forEach(i=>{const d=find(i.n);if(!d)return;for(let k=0;k<5;k++)t[k]+=d[2+k]*i.g/100});return t}
-function sv(){return Math.max(0.1,+$('sv').value||1)}
-function todayTot(){const td=today(),s=[0,0,0,0,0];log.filter(e=>e.d===td).forEach(e=>e.t.forEach((v,k)=>s[k]+=v));return s}
-function rem2(t){const T=['tk','tp','tf','tc'].map(i=>+$(i).value||0),el=$('rm2');if(!T.some(v=>v>0)){el.textContent='';return}
- const s=todayTot(),N=['พลังงาน','โปรตีน','ไขมัน','คาร์บ'],U=['kcal','g','g','g'];
- el.innerHTML='<b>ถ้ากินเมนูนี้ วันนี้จะ</b> '+N.map((n,k)=>{if(!T[k])return '';const r=T[k]-s[k]-t[k],F=k?f1:f0;return `${n} ${r<0?'<span class="up">เกิน '+F(-r)+'</span>':'เหลือ '+F(r)} ${U[k]}`}).filter(Boolean).join(' · ')}
-function render(){
- const L=$('list');
- if(!items.length)L.innerHTML='<div class="sm">ยังไม่มีรายการ ค้นหาด้านล่างเพื่อเพิ่ม</div>';
- else L.innerHTML=items.map((i,x)=>{const d=find(i.n)||[i.n,'',0,0,0,0,0];return `<div class="ing"><div><div class="nm">${d[0]}${d[7]?' <span class="est">ค่าประมาณ</span>':''}</div><div class="sm">${f0(d[2]*i.g/100)} kcal · โซเดียม ${f0(d[6]*i.g/100)} mg · P ${f1(d[3]*i.g/100)} · F ${f1(d[4]*i.g/100)} · C ${f1(d[5]*i.g/100)} g</div></div><div class="g"><button data-a="m" data-x="${x}" aria-label="ลด">−</button><input type="number" min="0" step="any" value="${i.g}" data-x="${x}" aria-label="กรัม"><button data-a="p" data-x="${x}" aria-label="เพิ่ม">+</button><button class="x" data-a="d" data-x="${x}" aria-label="ลบ">×</button></div></div>`}).join('');
- const n=sv(),t=sum(items).map(v=>v/n),b=base?sum(base).map(v=>v/n):null;
- $('kc').textContent=f0(t[0]);$('vp').textContent=f1(t[1]);$('vf').textContent=f1(t[2]);$('vc').textContent=f1(t[3]);$('vn').textContent=f0(t[4]);
- $('pl').textContent=items.length?`(${f0(items.reduce((a,i)=>a+i.g,0)/n)} g/จาน)`:'';
- const dl=$('dk');dl.className='dl';dl.textContent='';
- if(b&&Math.abs(t[0]-b[0])>=1){const d=t[0]-b[0];dl.textContent=(d>0?'+':'')+f0(d)+' เทียบค่าเดิม';dl.className='dl '+(d>0?'up':'dn')}
- const e=[t[1]*4,t[2]*9,t[3]*4],es=e[0]+e[1]+e[2]||1;
- $('bar').innerHTML=`<div style="width:${e[0]/es*100}%;background:#3b82c4"></div><div style="width:${e[1]/es*100}%;background:#d9a21a"></div><div style="width:${e[2]/es*100}%;background:#6fbf6f"></div>`;
- $('sod').textContent=t[4]?`โซเดียม ≈ ${f0(t[4]/2000*100)}% ของ 2,000 mg/วัน (เกณฑ์อ้างอิง WHO)`:'';
- rem2(t);const est=items.filter(i=>(find(i.n)||[])[7]).length;
- $('ew').innerHTML=est?`<span class="est">มี ${est} รายการเป็นค่าประมาณ — ตรวจสอบกับฉลากสินค้า</span>`:'';
-}
-$('list').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const x=+b.dataset.x,a=b.dataset.a;
- if(a==='p')items[x].g+=5;else if(a==='m')items[x].g=Math.max(0,items[x].g-5);else if(a==='d')items.splice(x,1);render()});
-$('list').addEventListener('input',e=>{if(e.target.tagName==='INPUT'){items[+e.target.dataset.x].g=Math.max(0,+e.target.value||0);const k=e.target.selectionStart;renderTotalsOnly()}});
-function renderTotalsOnly(){const a=document.activeElement,x=a&&a.dataset?a.dataset.x:null;render();if(x!==null){const el=document.querySelector(`#list input[data-x="${x}"]`);if(el){el.focus()}}}
-$('sv').oninput=render;
-function setItems(a){items=a.map(([n,g])=>({n,g}));base=items.map(i=>({...i}))}
-$('pre').innerHTML=P.map((p,i)=>`<button class="chip" data-i="${i}">${p[0]}</button>`).join('');
-$('pre').onclick=e=>{const b=e.target.closest('button');if(!b)return;const p=P[+b.dataset.i];$('mn').value=p[0];setItems(p[1]);render()};
-// search
-$('q').oninput=()=>{const q=$('q').value.trim(),r=$('res');if(!q){r.style.display='none';return}
- const m=all().filter(d=>d[0].includes(q)).slice(0,30);
- r.innerHTML=m.length?m.map(d=>`<div data-n="${d[0]}">${d[0]} <span class="sm">${f0(d[2])} kcal/100g</span></div>`).join(''):'<div class="sm">ไม่พบ ใช้ "เพิ่มวัตถุดิบเอง"</div>';r.style.display='block'};
-$('res').onclick=e=>{const d=e.target.closest('[data-n]');if(!d)return;const n=d.dataset.n,ex=items.find(i=>i.n===n);
- if(ex)ex.g+=10;else{items.push({n,g:10});if(base&&!base.find(i=>i.n===n))base.push({n,g:0})}
- $('q').value='';$('res').style.display='none';render()};
-// adjust
-document.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{items.forEach(i=>{const d=find(i.n);if(d&&d[1]===b.dataset.k)i.g=Math.round(i.g*(+b.dataset.f)*10)/10});render()});
-$('rst').onclick=()=>{if(base){items=base.filter(i=>i.g>0).map(i=>({...i}));render()}};
-$('clr').onclick=()=>{items=[];base=null;$('mn').value='เมนูของฉัน';render()};
-// custom
-$('cust').onclick=()=>$('cf').classList.toggle('hid');
-$('csave').onclick=()=>{const n=$('cn').value.trim();if(!n||$('ck').value==='')return;
- cust.push([n+' (กำหนดเอง)','other',+$('ck').value||0,+$('cp').value||0,+$('cfa').value||0,+$('cc').value||0,+$('cs').value||0]);st('fd_cust',cust);
- ['cn','ck','cp','cfa','cc','cs'].forEach(i=>$(i).value='');$('cf').classList.add('hid');$('q').value=n;$('q').oninput()};
-// log
-const today=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
-let log=st('fd_log')||[];
-$('save').onclick=()=>{if(!items.length)return;const t=sum(items).map(v=>v/sv());
- log.push({d:today(),n:$('mn').value||'เมนู',t});st('fd_log',log);$('save').textContent='✓ บันทึกแล้ว';setTimeout(()=>$('save').textContent='+ บันทึกเข้ามื้อวันนี้',1200)};
-function renderLog(){
- const td=today(),L=log.map((e,i)=>({...e,i})).filter(e=>e.d===td);
- $('td').textContent=td;
- $('tl').innerHTML=L.length?L.map(e=>`<div class="l"><div>${e.n}<div class="sm">P ${f0(e.t[1])} · F ${f0(e.t[2])} · C ${f0(e.t[3])} g</div></div><div>${f0(e.t[0])} kcal <button class="chip x" data-i="${e.i}">ลบ</button></div></div>`).join(''):'<div class="sm">ยังไม่มีบันทึกวันนี้</div>';
- const s=[0,0,0,0,0];L.forEach(e=>e.t.forEach((v,k)=>s[k]+=v));
- const tk=+$('tk').value||0,tp=+$('tp').value||0;
- const _x=`รวม <b>${f0(s[0])}</b> kcal${tk?` (เหลือ ${f0(tk-s[0])} จาก ${f0(tk)})`:''} · โปรตีน <b>${f0(s[1])}</b> g${tp?` (เหลือ ${f0(Math.max(0,tp-s[1]))})`:''}`;
- const tf=+$('tf').value||0,tcb=+$('tc').value||0;
- const RW=[['พลังงาน',s[0],tk,'kcal'],['โปรตีน',s[1],tp,'g'],['ไขมัน',s[2],tf,'g'],['คาร์โบไฮเดรต',s[3],tcb,'g']];
- $('ts').innerHTML=RW.map(([n,e,t,u])=>{const F=u==='kcal'?f0:f1;if(!t)return `<div class="l"><div>${n}</div><div>กินแล้ว ${F(e)} ${u}</div></div>`;const r=t-e,c=r<0?'var(--bad)':'var(--pri)';return `<div class="l"><div>${n} <span class="sm">${F(e)} / ${F(t)} ${u}</span><div class="bar" style="height:6px;margin-top:4px"><div style="width:${Math.min(100,e/t*100)}%;background:${c}"></div></div></div><div style="text-align:right"><b style="color:${c}">${r<0?'เกิน '+F(-r):'เหลือ '+F(r)}</b> <span class="sm">${u}</span></div></div>`}).join('');
- const by={};log.forEach(e=>{by[e.d]=by[e.d]||[0,0];by[e.d][0]+=e.t[0];by[e.d][1]+=e.t[1]});
- const ds=Object.keys(by).sort().reverse().slice(0,30);
- $('hs').innerHTML=ds.length?ds.map(d=>`<div class="l"><div>${d}</div><div>${f0(by[d][0])} kcal · P ${f0(by[d][1])} g</div></div>`).join(''):'<div class="sm">ยังไม่มีข้อมูล</div>';
-}
-$('tl').onclick=e=>{const b=e.target.closest('button');if(!b)return;log.splice(+b.dataset.i,1);st('fd_log',log);renderLog()};
-['tk','tp','tf','tc'].forEach(i=>$(i).oninput=()=>{st('fd_tg',['tk','tp','tf','tc'].map(j=>$(j).value));renderLog();render()});
-const tg=st('fd_tg');if(tg){['tk','tp','tf','tc'].forEach((i,k)=>{if(tg[k]!==undefined&&tg[k]!==null)$(i).value=tg[k]})}
-// tabs
-[0,1,2].forEach(i=>$('t'+i).onclick=()=>{[0,1,2].forEach(j=>{$('t'+j).classList.toggle('on',i===j);$('p'+j).classList.toggle('hid',i!==j)});if(i===1)renderLog();if(i===2)$('cnt').textContent=`${D.length} รายการ (+ ที่กำหนดเอง ${cust.length}) · ค่าประมาณ ${D.filter(d=>d[7]).length} รายการ`});
-$('ai').onclick=async()=>{
- const m=$('mn').value.trim(),s=$('as');if(!m||m==='เมนูของฉัน'){s.textContent='พิมพ์ชื่อเมนูในช่องด้านบนก่อน';$('mn').focus();return}
- const b=$('ai');b.disabled=true;s.textContent='⏳ AI กำลังวิเคราะห์เมนู...';
- try{
-  let sm=null;try{sm=window.claude?await window.claude.use('sample'):null}catch(e){}
-  if(!sm){const k=st('fd_key');if(!k){$('kb').classList.remove('hid');s.textContent='ใส่ API key ก่อนใช้โหมด AI (หรือใช้ค้นหา/เพิ่มวัตถุดิบเองได้)';return}
-   sm=async q=>{const rs=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'content-type':'application/json','x-api-key':k,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-5-5',max_tokens:2000,messages:[{role:'user',content:q}]})});const j=await rs.json();if(!rs.ok)throw new Error((j.error&&j.error.message)||'API error');return{text:j.content.map(c=>c.text||'').join('')}}}
-  const names=all().map(d=>d[0]).join(' | ');
-  const r=await sm(`คุณเป็นนักกำหนดอาหารไทย แยกวัตถุดิบและเครื่องปรุงของเมนู "${m}" ต่อ 1 จานที่ทำกินที่บ้านโดยทั่วไป (รวมน้ำมัน น้ำตาล น้ำปลา ฯลฯ ที่ใช้จริง) ระบุน้ำหนักเป็นกรัม (ของเหลวเป็นมล.≈กรัม)\nถ้าวัตถุดิบตรงกับรายการนี้ ให้ใช้ชื่อตรงตัวเป๊ะ: ${names}\nถ้าไม่มีในรายการ ให้ตั้งชื่อไทยสั้นๆ และให้ค่าโภชนาการต่อ 100 กรัมที่ใกล้เคียง Thai Food Composition Database (INMU มหิดล) หรือ USDA มากที่สุด\nตอบเป็น JSON เท่านั้น ไม่มีข้อความอื่น: {"items":[{"name":"","g":0,"kcal":0,"p":0,"f":0,"c":0,"na":0}],"note":"หมายเหตุสั้นๆ ถ้าชื่อเมนูไม่ชัดเจน"} โดย kcal,p,f,c ต่อ 100g และ na เป็น mg ต่อ 100g`,{cache:false});
-  const mt=r.text.match(/\{[\s\S]*\}/);if(!mt)throw new Error('อ่านผลลัพธ์ไม่ได้');
-  const j=JSON.parse(mt[0]),out=[],added=[];
-  (j.items||[]).forEach(o=>{let n=String(o.name||'').trim();const g=Math.max(0,Math.round(+o.g||0));if(!n||!g)return;
-   if(!find(n)&&find(n+' (AI)'))n=n+' (AI)';
-   if(!find(n)){const p=Math.max(0,+o.p||0),f=Math.max(0,+o.f||0),c=Math.max(0,+o.c||0),cal=4*p+9*f+4*c;let k=Math.max(0,+o.kcal||0);
-    if(Math.abs(k-cal)>0.25*Math.max(cal,k))k=cal;
-    n=n+' (AI)';cust.push([n,'other',Math.round(k),p,f,c,Math.max(0,Math.round(+o.na||0)),1]);added.push(n)}
-   const ex=out.find(x=>x[0]===n);if(ex)ex[1]+=g;else out.push([n,g])});
-  if(!out.length)throw new Error('ไม่พบวัตถุดิบ ลองระบุชื่อเมนูให้ชัดขึ้น');
-  st('fd_cust',cust);setItems(out);render();
-  s.textContent=`✓ ได้ ${out.length} รายการ (AI ประมาณค่าเอง ${added.length} รายการ) ปรับกรัมได้ทันที${j.note?' · '+j.note:''}`;
- }catch(e){s.textContent='ไม่สำเร็จ: '+((e&&e.message)||'ลองใหม่อีกครั้ง')}
- finally{b.disabled=false}
-};
-$('kbtn').onclick=()=>{const v=$('ky').value.trim();if(v){st('fd_key',v);$('ky').value='';$('kb').classList.add('hid');$('as').textContent='บันทึก key แล้ว กดสร้างวัตถุดิบได้เลย'}};
-if('serviceWorker' in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('sw.js').catch(()=>{});
-setItems(P[0][1]);$('mn').value=P[0][0];render();
+/* โหลดสคริปต์หลังวาดหน้า intro เสร็จก่อน เพื่อให้แอนิเมชันไม่กระตุก */
+(function(){var L=['data.js','core.js','art.js','avatar.js','app.js'];
+function go(){L.forEach(function(s){var e=document.createElement('script');e.src=s;e.async=false;document.body.appendChild(e)})}
+requestAnimationFrame(function(){requestAnimationFrame(function(){setTimeout(go,30)})})})();
 </script>
+
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){})})}</script>
 </body>
 </html>
